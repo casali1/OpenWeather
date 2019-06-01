@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using OpenWeather.Models;
+
 
 namespace OpenWeather.Controllers
 {
-    [Route("api/[controller]")]
+    [RoutePrefix("weather")]
     public class WeatherCheckerController : Controller
     {
-        [HttpGet]
+        [Route("city")]
         public ActionResult City(string city)
         {
             return View(new Data { Temp = "12", Summary = "Barmy", City = "NY" });
