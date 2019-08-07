@@ -21,6 +21,7 @@ namespace OpenWeather.Controllers
                 {
                     client.BaseAddress = new Uri("http://api.openweathermap.org");
                     var response = await client.GetAsync($"/data/2.5/weather?q={city}&appid=f99e1e3ccd770a8a43db5680342edd6a&units=imperial");
+                    //var response = await client.GetAsync($"/data/2.5/forecast?q={city}&mode=xml&appid=f99e1e3ccd770a8a43db5680342edd6a&units=imperial&days=5");
                     response.EnsureSuccessStatusCode();
 
                     var stringResult = await response.Content.ReadAsStringAsync();
